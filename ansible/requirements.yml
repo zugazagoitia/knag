@@ -1,0 +1,7 @@
+---
+roles:
+  - src: xanmanning.k3s
+  
+collections:
+  - kubernetes.core
+

@@ -1,0 +1,57 @@
+WORKER_NODES=5
+
+MASTER_RAM=4096
+MASTER_CPU=2
+WORKER_RAM=2048
+WORKER_CPU=1
+
+# # Ignored by Hyper-V
+# IP_PREFIX="10.0.0."
+# IP_START=10
+
+Vagrant.configure("2") do |config|
+
+    # # allow guests to reach each other by hostname
+     config.vm.provision "allow_guest_host_resolution",
+     type: "shell",
+     inline: 'apt-get install -y avahi-daemon libnss-mdns'
+
+    # add ssh keys
+    config.vm.provision "shell" do |s|
+      ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
+      s.inline = <<-SHELL
+        echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys
+      SHELL
+    end
+
+    config.vm.box = "generic/debian11"
+    config.vm.box_check_update = true
+
+    config.hostmanager.enabled = true
+    config.hostmanager.manage_guest = true
+
+    config.vm.define "master" do |master|
+      master.vm.hostname = "master-node"
+      # # Ignored by Hyper-V
+      # master.vm.network "private_network", ip: IP_NW + "#{IP_START}"
+      config.vm.network "public_network", bridge: "VagrantExternalSwitch"
+      master.vm.provider "hyperv" do |h|
+          h.maxmemory = MASTER_RAM
+          h.cpus = MASTER_CPU
+      end
+    end
+
+    (1..WORKER_NODES).each do |i|
+      config.vm.define "node0#{i}" do |node|
+        node.vm.hostname = "worker-node0#{i}"
+        # # Ignored by Hyper-V
+        # node.vm.network "private_network", ip: IP_NW + "#{IP_START + i}"
+        config.vm.network "public_network", bridge: "VagrantExternalSwitch"
+        node.vm.provider "hyperv" do |h|
+            h.maxmemory = WORKER_RAM
+            h.cpus = WORKER_CPU
+        end
+      end
+    end
+
+  end

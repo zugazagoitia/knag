@@ -1,0 +1,21 @@
+---
+- hosts: cluster
+  remote_user: vagrant
+  become: true
+  vars:
+    k3s_become: true
+    k3s_server:
+      disable:
+        - traefik
+  roles:
+     - role: xanmanning.k3s
+
+- hosts: master
+  remote_user: vagrant
+  become: true
+  tasks:
+  - name: Fetch kubeconfig
+    fetch:
+      src: /etc/rancher/k3s/k3s.yaml
+      dest: ./k3s-config.yaml   
+      flat: yes
