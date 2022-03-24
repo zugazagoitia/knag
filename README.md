@@ -1,12 +1,14 @@
 <h1 align="center">
   <br>
-  <a href="logo-link"><img src="logo-url" alt="Knag" width="200"></a>
+  <a href="https://github.com/zugazagoitia/knag">
+    <img src="https://raw.githubusercontent.com/zugazagoitia/knag/main/icons/logo@0.25x.png" alt="Knag logo" width="200">
+  </a>
   <br>
   Knag
   <br>
 </h1>
 
-<h4 align="center">An Algorithmic Trading SaaS platform for my TFG (Bachelor Final Project)</h4>
+<h4 align="center">An Algorithmic Trading SaaS platform for my TFG (Final Degree Project)</h4>
 
 <p align="center">
   <a href="badge-link">
@@ -23,7 +25,6 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
 
 ## Abstract
 
@@ -33,14 +34,18 @@ ToDo
 
 [Vagrant](/vagrant/README.md)
 
+[Ansible](/ansible/README.md)
+
+[Helm](/helm/README.md)
+
 
 ## Architectural Description
 
+ToDo
 
 ## How To Use
 
-
-BlaBla
+ToDo
 
 ```bash
 # Some Command
@@ -50,12 +55,17 @@ $ git pull
 
 ## Credits
 
+Icon by: <a href="https://www.vecteezy.com/free-vector/tree-rings">Tree Rings Vectors by Vecteezy</a>
+
 This software uses the following open source packages:
+
+- 
 
 
 ## License
 
-MIT
+[GNU Affero General Public License v3.0](/LICENSE)
+
 
 ---
 

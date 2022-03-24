@@ -1,6 +1,0 @@
-apiVersion: v2
-kind: ConfigMap
-metadata:
-  name: chart-configmap
-data:
-    myvalue: "hello"

@@ -1,6 +1,6 @@
 # Vagrant Development Enviroment on Windows
 
-In order to provide a set of virtual hosts to deploy our *Kubernetes* cluster with *Ansible* we can provision some VMs using [Vagrant](https://www.vagrantup.com/).
+In order to provide a set of virtual hosts to create our *Kubernetes* cluster with *Ansible* we can provision some Debian 11 VMs using [Vagrant](https://www.vagrantup.com/).
 
 
 > Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team.
@@ -58,10 +58,11 @@ vagrant destroy --force
 ``` 
 <br>
 
-### What's the outcome?
-By default all VMs will register using DHCP through the specified network adapter, their IPs are outputed while the VMs create.
+### Output
+ 
+By default all VMs will register on the specified network adapter's network using DHCP, their IPs are printed while the VMs create.
 
-VMs will also broadcast themselves through [mDNS/DNS-SD](https://en.wikipedia.org/wiki/Zero-configuration_networking#DNS-SD_with_multicast). The master node is available at `master-node` and the worker nodes at `worker-node01  worker-node02 ... worker-node0N`. This will be usefull when we provision them using ansible. 
+VMs will also broadcast themselves through [mDNS/DNS-SD](https://en.wikipedia.org/wiki/Zero-configuration_networking#DNS-SD_with_multicast). The master node is available at `master-node` and the worker nodes at `worker-node01  worker-node02 ... worker-node0N`. This will be particularly usefull when we provision them using ansible, we will not need to type any IP that may be prone to changing.
 
  
 
