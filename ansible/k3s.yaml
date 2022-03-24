@@ -17,5 +17,5 @@
   - name: Fetch kubeconfig
     fetch:
       src: /etc/rancher/k3s/k3s.yaml
-      dest: ./k3s-config.yaml   
+      dest: ./credentials.yaml   
       flat: yes

@@ -1,4 +1,4 @@
-# Vagrant Development Enviroment on Windows
+# Vagrant Development Environment on Windows
 
 In order to provide a set of virtual hosts to create our *Kubernetes* cluster with *Ansible* we can provision some Debian 11 VMs using [Vagrant](https://www.vagrantup.com/).
 
@@ -27,7 +27,7 @@ In order to provision the VMs we need some preparation.
 
 1. Install *Vagrant* and enable *Hyper-V* (refer to their respective documentations)
    
-2. Ensure you have a valid LAN/WLAN conection and that there is no *External Virtual Switch* conected to your network adapter.
+2. Ensure you have a valid LAN/WLAN connection and that there is no *External Virtual Switch* connected to your network adapter.
    
 3. Using powershell, install the Vagrant Host Manager Plugin: 
    
@@ -62,7 +62,7 @@ vagrant destroy --force
  
 By default all VMs will register on the specified network adapter's network using DHCP, their IPs are printed while the VMs create.
 
-VMs will also broadcast themselves through [mDNS/DNS-SD](https://en.wikipedia.org/wiki/Zero-configuration_networking#DNS-SD_with_multicast). The master node is available at `master-node` and the worker nodes at `worker-node01  worker-node02 ... worker-node0N`. This will be particularly usefull when we provision them using ansible, we will not need to type any IP that may be prone to changing.
+VMs will also broadcast and reach themselves through [mDNS/DNS-SD](https://en.wikipedia.org/wiki/Zero-configuration_networking#DNS-SD_with_multicast). The master node is available at `master-node` and the worker nodes at `worker-node01  worker-node02 ... worker-node0N`. This will be particularly useful when we provision them using ansible, we will not need to type any IP that may be prone to changing.
 
  
 

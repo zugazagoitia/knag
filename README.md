@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="#abstract">Abstract</a> •
-  <a href="#respoitory-structure">Respoitory Structure</a> •
+  <a href="#repository-structure">Repository Structure</a> •
   <a href="#architectural-description">Architectural Description</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#credits">Credits</a> •
@@ -30,7 +30,7 @@
 
 ToDo
 
-## Respoitory Structure
+## Repository Structure
 
 [Vagrant](/vagrant/README.md)
 
