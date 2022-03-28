@@ -1,0 +1,22 @@
+image:
+  tag: "0.1.2"
+
+db:
+  username: "dbuser"
+  name: "users"
+  port: 27017
+
+
+replicaCount: 3
+
+mongodb:
+  architecture: replicaset
+  replicaCount: 3 # Horizontal scaling?
+  auth:
+    enabled: true
+    usernames:
+      - "dbuser"
+    databases:
+      - "users"
+    existingSecret: knag-users-db-secret
+  

@@ -1,2 +1,40 @@
+### Vagrant VMs ###
 .vagrant/
+
+### Generated Kubernetes Configuration ###
 ansible/credentials.yaml
+
+### Ansible ###
+*.retry
+
+### Helm ###
+# Chart dependencies
+*.tgz
+
+# Temporary
+*.lock
+
+### Vagrant ###
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
+
+### Vagrant Patch ###
+*.box
+
+### VisualStudioCode ###
+.vscode/*
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+

@@ -12,7 +12,10 @@
 
 <p align="center">
   <a href="badge-link">
-    <img src="badge-image" alt="badge-alt">
+    <!--
+    >
+    <!-->
+    <img style="visibility: hidden" src="badge-image" alt="badge-alt">
   </a>
 </p>
 
