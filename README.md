@@ -22,7 +22,7 @@
 <p align="center">
   <a href="#abstract">Abstract</a> •
   <a href="#repository-structure">Repository Structure</a> •
-  <a href="#architectural-description">Architectural Description</a> •
+  <a href="#architecture">Architecture</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#credits">Credits</a> •
   <a href="#license">License</a>
@@ -42,9 +42,10 @@ ToDo
 [Helm](/helm/README.md)
 
 
-## Architectural Description
+## Architecture
 
 ToDo
+
 
 ## How To Use
 

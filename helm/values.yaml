@@ -1,9 +1,19 @@
 
+namespace: knag
+
 kong:
+  namespace: knag
+
+  podAnnotations:
+    kuma.io/gateway: enabled
+
+  autoscaling:
+    enabled: true
+
   image:
     repository: kong
     tag: "2.8"
-
+      
   ingressController:
     enabled: true
     installCRDs: false
@@ -14,6 +24,7 @@ kong:
       enabled: true
       servicePort: 8001
       containerPort: 8001
-
+  
+  
 users:
   enabled: true

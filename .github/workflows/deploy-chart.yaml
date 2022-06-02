@@ -1,0 +1,40 @@
+name: 'Deploy'   
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - '**/Chart.yaml'
+jobs:
+  deployment:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: 'Checkout'  # Checkout the repository code.
+      uses: 'actions/checkout@v2'
+
+    - name: Create kube config
+      run: |
+        mkdir -p $HOME/.kube/
+        echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config
+        chmod 600 $HOME/.kube/config      
+
+    - name: Helm Installation
+      uses: azure/setup-helm@v2.0
+      with:
+        version: v3.9.0
+
+    - name: Lint helm charts
+      run: helm lint ./helm
+    - name: Deploy
+      run: |
+        helm upgrade --install --dependency-update --atomic knag ./helm/ -f ./helm/values.yaml \
+        --namespace knag \
+        --set users.mailgun.apiKey="{{ secrets.MAILGUN_KEY }}" \
+        --set users.mailgun.domain="{{ secrets.MAILGUN_DOMAIN }}" \
+        --set users.mailgun.sender="{{ secrets.MAILGUN_SENDER }}" \
+        --set users.mailgun.apiUrl="{{ secrets.MAILGUN_URL }}" \
+        --set users.recaptcha.siteKey="{{ secrets.RECAPTCHA_SITE }}" \
+        --set users.recaptcha.secretKey="{{ secrets.RECAPTCHA_SECRET }}" \
+        --set users.rsaKey.pub="{{ secrets.RSA_PUBLIC }}" \
+        --set users.rsaKey.priv="{{ secrets.RSA_PRIVATE }}" 
+
