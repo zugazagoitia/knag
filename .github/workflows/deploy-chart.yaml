@@ -8,6 +8,7 @@ on:
 jobs:
   deployment:
     runs-on: 'ubuntu-latest'
+    environment: prod
     steps:
     - name: 'Checkout'  # Checkout the repository code.
       uses: 'actions/checkout@v2'
@@ -29,12 +30,12 @@ jobs:
       run: |
         helm upgrade --install --dependency-update --atomic knag ./helm/ -f ./helm/values.yaml \
         --namespace knag \
-        --set users.mailgun.apiKey="{{ secrets.MAILGUN_KEY }}" \
-        --set users.mailgun.domain="{{ secrets.MAILGUN_DOMAIN }}" \
-        --set users.mailgun.sender="{{ secrets.MAILGUN_SENDER }}" \
-        --set users.mailgun.apiUrl="{{ secrets.MAILGUN_URL }}" \
-        --set users.recaptcha.siteKey="{{ secrets.RECAPTCHA_SITE }}" \
-        --set users.recaptcha.secretKey="{{ secrets.RECAPTCHA_SECRET }}" \
-        --set users.rsaKey.pub="{{ secrets.RSA_PUBLIC }}" \
-        --set users.rsaKey.priv="{{ secrets.RSA_PRIVATE }}" 
+        --set users.mailgun.apiKey="${{ secrets.MAILGUN_KEY }}" \
+        --set users.mailgun.domain="${{ secrets.MAILGUN_DOMAIN }}" \
+        --set users.mailgun.sender="${{ secrets.MAILGUN_SENDER }}" \
+        --set users.mailgun.apiUrl="${{ secrets.MAILGUN_URL }}" \
+        --set users.recaptcha.siteKey="${{ secrets.RECAPTCHA_SITE }}" \
+        --set users.recaptcha.secretKey="${{ secrets.RECAPTCHA_SECRET }}" \
+        --set users.rsaKey.pub="${{ secrets.RSA_PUBLIC }}" \
+        --set users.rsaKey.priv="${{ secrets.RSA_PRIVATE }}" 
 

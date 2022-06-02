@@ -20,6 +20,7 @@ dependencies:
 - name: kong
   version: 2.7.0
   repository: https://charts.konghq.com
+  
 # Prometheus
 # - name: kube-prometheus-stack
 #   version: 34.5.1
