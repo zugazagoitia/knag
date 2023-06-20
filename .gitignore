@@ -38,3 +38,5 @@ ansible/credentials.yaml
 .history
 .ionide
 
+
+.DS_Store

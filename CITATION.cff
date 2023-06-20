@@ -1,1 +1,45 @@
-# ToDo 
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Knag
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Alberto
+    family-names: Zugazagoitia
+    email: alberto@zugazagoitia.com
+    orcid: 'https://orcid.org/0009-0006-7700-4386'
+repository-code: 'https://github.com/zugazagoitia/knag'
+abstract: >-
+  Algorithmic and automated trading is out of the scope of
+  retail investors, due to the technical complexity of it as
+  well as the costs of development.
+
+  Some brokers offer this service but at an upfront cost and
+  a monthly fee. Users depend on the broker's platform and
+  servers to execute the trades, giving the broker too much
+  control over the user's data and trading activity.
+
+
+  The solution implemented in this project is a customizable
+  FOSS automated trading platform that can be used by retail
+  investor communities to implement their trading strategies
+  and by individual investors to automate their trading
+  activity. 
+
+
+  The platform is designed to be highly scalable and
+  available, developed with a cloud-first approach, and
+  using the latest technologies in the field of distributed
+  systems, such as Kubernetes and public cloud providers'
+  specific services.
+
+
+  The specific implementation of the trading bot is out of
+  the scope of this project. Nonetheless, the platform is
+  designed to be easily extensible and customizable, through
+  the use of docker containers.
+license: AGPL-3.0
