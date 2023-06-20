@@ -68,13 +68,13 @@ Additionally, the Gateway manages the termination of TLS (Transport Layer Securi
 
 The application's micro-service architecture is composed of the following components:
 
-- **Users**: Responsible for client authentication, including login, registration, and user data updates. Users are issued a JWT signed by an authoritative certificate, enabling authentication against any service.
+- [**Users**](https://github.com/zugazagoitia/knag-users): Responsible for client authentication, including login, registration, and user data updates. Users are issued a JWT signed by an authoritative certificate, enabling authentication against any service.
 
-- **Vault**: Stores symmetrically encrypted API keys provided by users for trading brokers. The data is decrypted using the user's password, which remains unknown to the system. The decrypted keys are then used by the trading bot.
+- [**Vault**](https://github.com/zugazagoitia/knag-vault): Stores symmetrically encrypted API keys provided by users for trading brokers. The data is decrypted using the user's password, which remains unknown to the system. The decrypted keys are then used by the trading bot.
 
 - **Trading Bot Manager**: Manages the provisioning and monitoring of bot instances in a separate public cloud resource. This separation ensures client instances are independent and prevents resource contention. **This service is not implemented in this project**.
 
-A web application interacts with the exposed REST API, which remains agnostic to the internal workings of the services. The deployment and infrastructure of the user interface are separate from the services.
+A [web application](https://github.com/zugazagoitia/knag-web) interacts with the exposed REST API, which remains agnostic to the internal workings of the services. The deployment and infrastructure of the user interface are separate from the services.
 
 The clear separation between business logic and presentation mitigates the impact of service malfunctions, confining any damage to the specific service.
 
