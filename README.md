@@ -41,7 +41,7 @@ The specific implementation of the trading bot is out of the scope of this proje
 
 ## Thesis Document
 
-The thesis document is available in Spanish at **LINK TO BE ADDED**.
+The thesis document is available [here](memoria.pdf).
 
 ## Repository Structure
 
