@@ -41,7 +41,7 @@ The specific implementation of the trading bot is out of the scope of this proje
 
 ## Thesis Document
 
-The thesis document is available [here](memoria.pdf).
+The thesis document is available at the _[Archivo Digital UPM](https://oa.upm.es/75023/)_ and in [this repository](memoria.pdf).
 
 ## Repository Structure
 
