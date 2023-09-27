@@ -12,6 +12,9 @@ authors:
     family-names: Zugazagoitia
     email: alberto@zugazagoitia.com
     orcid: 'https://orcid.org/0009-0006-7700-4386'
+identifiers:
+  - type: url
+    value: 'https://oa.upm.es/75023/'
 repository-code: 'https://github.com/zugazagoitia/knag'
 abstract: >-
   Algorithmic and automated trading is out of the scope of
